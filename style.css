@@ -1,0 +1,558 @@
+/* =============================== */
+/* GENERAL STYLES */
+/* =============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans Telugu', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    color: #333;
+}
+
+/* =============================== */
+/* HEADER */
+/* =============================== */
+
+header {
+    background: linear-gradient(135deg, #004d00 0%, #006600 100%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin: 5px 0 15px 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.c a, .c button {
+    background-color: rgb(8, 85, 45);
+    border-radius: 8px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.c a:hover, .c button:hover {
+    background-color: rgb(12, 120, 60);
+    transform: translateY(-2px);
+}
+
+#userDisplay {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#logoutBtn {
+    background-color: #d32f2f !important;
+}
+
+#logoutBtn:hover {
+    background-color: #b71c1c !important;
+}
+
+/* =============================== */
+/* NAVIGATION */
+/* =============================== */
+
+nav {
+    background: linear-gradient(135deg, #008000 0%, #00aa00 100%);
+    padding: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 8px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgba(8, 85, 45, 0.8);
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: rgb(8, 85, 45);
+    transform: translateY(-2px);
+}
+
+/* =============================== */
+/* AUTH MODAL */
+/* =============================== */
+
+#authModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-container {
+    position: relative;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form h2 {
+    color: #008000;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.auth-form p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #008000;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.3);
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    margin: 20px 0 10px 0;
+    background: linear-gradient(135deg, #008000 0%, #00aa00 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.auth-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.3);
+}
+
+.auth-form p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.auth-form a {
+    color: #008000;
+    text-decoration: underline;
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.close-auth {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.close-auth:hover {
+    background: #b71c1c;
+}
+
+/* =============================== */
+/* AUTH PROMPT */
+/* =============================== */
+
+#authPrompt {
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f5 100%);
+    border: 3px solid #008000;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 100px auto;
+    max-width: 600px;
+}
+
+#authPrompt h2 {
+    color: #004d00;
+    margin-top: 0;
+}
+
+#authPrompt button {
+    background: linear-gradient(135deg, #008000 0%, #00aa00 100%);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#authPrompt button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.3);
+}
+
+/* =============================== */
+/* SECTIONS */
+/* =============================== */
+
+section {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 3px solid green;
+    background-color: rgb(94, 211, 94);
+    box-shadow: 3px 3px 5px gray;
+}
+
+section h2 {
+    color: #004d00;
+    margin-top: 0;
+}
+
+/* =============================== */
+/* TABLES */
+/* =============================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f2f2f2;
+    margin: 15px 0;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #008000;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* =============================== */
+/* GALLERY */
+/* =============================== */
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* =============================== */
+/* FORMS */
+/* =============================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea, form select {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #008000;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.3);
+}
+
+/* =============================== */
+/* BUTTONS */
+/* =============================== */
+
+button {
+    background: linear-gradient(135deg, #008000 0%, #00aa00 100%);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* =============================== */
+/* POSTS */
+/* =============================== */
+
+.post {
+    background: #f0fff0;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px solid green;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.post-header strong {
+    color: #004d00;
+}
+
+.post-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.post-text {
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.post-actions button {
+    flex: 1;
+    min-width: 120px;
+}
+
+.comment-box {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.comment-box input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.comment-box button {
+    min-width: 100px;
+}
+
+.comments-section {
+    margin-top: 15px;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.comment {
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 8px 0;
+    border-left: 3px solid #008000;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* =============================== */
+/* FOOTER */
+/* =============================== */
+
+footer {
+    background: #004d00;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* =============================== */
+/* UTILITY CLASSES */
+/* =============================== */
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    display: inline;
+    margin: 5px;
+    width: 150px;
+    height: auto;
+}
+
+.i {
+    margin: 80px auto;
+    padding: 30px;
+    background-image: url(https://images.unsplash.com/photo-1670228260388-c5e536d0001c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGxpYnJhcnklMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    max-width: 500px;
+    border-radius: 25px;
+    text-align: center;
+    border: 5px solid;
+    color: white;
+}
+
+.i input {
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.i button {
+    border-radius: 8px;
+    padding: 8px 15px;
+    color: white;
+    background-color: rgb(2, 94, 4);
+    margin-top: 10px;
+}
+
+.nav {
+    text-align: center;
+}
+
+/* =============================== */
+/* RESPONSIVE */
+/* =============================== */
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery {
+        flex-direction: column;
+    }
+
+    .gallery img {
+        width: 100%;
+    }
+
+    .auth-container {
+        max-width: 90%;
+        padding: 30px 20px;
+    }
+
+    #authPrompt {
+        margin: 50px 20px;
+    }
+
+    .i {
+        margin: 40px 20px;
+        padding: 20px;
+    }
+}
